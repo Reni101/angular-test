@@ -1,0 +1,15 @@
+<h2 class="title">todolist-list</h2>
+<hr />
+
+<div>{{ str }}</div>
+
+<hr />
+<div *ngFor="let user of renderNg">
+  <b>Name:</b>
+  {{ user.name }}
+  <b>age:</b>
+  {{ user.age }}
+</div>
+
+<hr />
+<todo-children [children]="children" (sendString)="emitHandler($event)"> </todo-children>

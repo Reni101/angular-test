@@ -1,0 +1,10 @@
+<h2 class="title">{{ user.name }}</h2>
+<button [disabled]="isLoading" (click)="changeNameHandler()">change name</button>
+
+<hr />
+<div>{{ textInput }}</div>
+<input type="text" (input)="changeTextHandler($event)" [value]="textInput" />
+<hr />
+<div>{{ textNG }}</div>
+<input type="text" [(ngModel)]="textNG" />
+<button (click)="deletText()">delete</button>
