@@ -8,10 +8,22 @@ import { TodolistsListsComponent } from 'src/app/todolists-list/todolists-lists.
 import { FormsModule } from '@angular/forms'
 import { ChildrenComponent } from './todolists-list/children/children.component'
 import { CommonModule } from '@angular/common'
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, TodolistsListsComponent, ChildrenComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, CommonModule],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    TodolistsListsComponent,
+    ChildrenComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    CommonModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

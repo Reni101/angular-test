@@ -3,7 +3,7 @@
 <ng-template #elseBlock>
   <div [ngClass]="{ green: isGreen }">{{ title }}</div>
   <hr />
-  <span> {{ value }}</span>
+  <span> {{ value$ | async }}</span>
   <button (click)="incValue()">+</button>
   <button (click)="decValue()">-</button>
   <hr />

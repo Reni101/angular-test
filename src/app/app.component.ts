@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { ValueService } from 'src/app/services/value.service'
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'todo-root',
@@ -7,7 +8,8 @@ import { ValueService } from 'src/app/services/value.service'
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  value = 0
+  value$ = new Observable()
+
   constructor(private valueService: ValueService) {
     setTimeout(() => {
       this.isLoading = false
@@ -17,9 +19,10 @@ export class AppComponent implements OnInit {
     }, 3000)
   }
   ngOnInit() {
-    this.valueService.value$.subscribe(value => {
-      this.value = value
-    })
+    // this.valueService.value$.subscribe(value => {
+    //   this.value = value
+    // })
+    this.value$ = this.valueService.value$
   }
 
   isGreen = true
