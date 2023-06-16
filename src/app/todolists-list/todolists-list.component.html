@@ -14,9 +14,10 @@
 <hr />
 <h2>Todolist</h2>
 <div *ngFor="let todo of todos">
-  {{ todo.title }}
+  {{ todo.title }}, order: {{ todo.order }}
+  <button (click)="deleteTodo()">delete todo</button>
 </div>
-
+<button (click)="createTodo({{todo.id}})">add todo</button>
 <hr />
 
 <hr />
