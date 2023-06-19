@@ -1,24 +1,15 @@
 <h2 class="title">todolist-list</h2>
-<hr />
-
-<div>{{ str }}</div>
-
-<hr />
-<div *ngFor="let user of renderNg">
-  <b>Name:</b>
-  {{ user.name }}
-  <b>age:</b>
-  {{ user.age }}
-</div>
-
-<hr />
 <h2>Todolist</h2>
-<div *ngFor="let todo of todos">
-  {{ todo.title }}, order: {{ todo.order }}
-  <button (click)="deleteTodo()">delete todo</button>
-</div>
-<button (click)="createTodo({{todo.id}})">add todo</button>
+<div *ngIf="!!str; else todoBlock">{{ str }}</div>
 <hr />
+<ng-template #todoBlock>
+  <div *ngFor="let todo of todos">
+    {{ todo.title }}, order: {{ todo.order }}
+    <button (click)="deleteTodo($event, todo.id)">delete todo</button>
+  </div>
+  <button (click)="createTodo()">add todo</button>
+  <hr
+/></ng-template>
 
 <hr />
 <todo-children [children]="children" (sendString)="emitHandler($event)">
